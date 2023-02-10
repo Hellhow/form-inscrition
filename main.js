@@ -52,7 +52,7 @@ function checkPass(pass1, pass2) {
     } else {
         pass1.classList.remove("success");
         pass1.classList.add("danger");
-        pass2.classList.remove("succes");
+        pass2.classList.remove("success");
         pass2.classList.add("danger");
         console.warn("passwords aren't same");
         return false;
