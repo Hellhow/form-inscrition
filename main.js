@@ -5,8 +5,43 @@ const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 const regexTel = /^(\+33\s?|0)\s?[1-9]\s?(\d{2}\s?){3}\d{2}$/;
 const info = document.createElement(`p`);
 
-email.addEventListener("keyup", () => validationUI(email, regexEmail));
-contact.addEventListener("keyup", () => validationUI(contact, regexTel));
+// Ecout event
+form.firstName.addEventListener(`keyup`, () => {
+    countChar(form.firstName);
+})
+
+form.lastName.addEventListener(`keyup`, () => {
+    countChar(form.lastName);
+})
+
+form.email.addEventListener(`keyup`, () => {
+    validationUI(form.email, regexEmail);
+})
+
+form.pass1.addEventListener(`keyup`, () => {
+    checkPass(form.pass1, form.pass2);
+})
+
+form.pass2.addEventListener(`keyup`, () => {
+    checkPass(form.pass1, form.pass2);
+})
+
+form.majeur.addEventListener(`change`, () => {
+    isMAjor(form.majeur);
+})
+
+form.contact.addEventListener(`keyup`, () => {
+    validationUI(form.contact, regexTel);
+})
+
+// Soumission du form
+form.addEventListener(`submit`, (e) => {
+    // Test chaque champ
+    // Enregistrer chaque rép dans un tab
+    // Test si ts ls champs du tab === true pour submit le form
+    e.preventDefault();
+    console.log(`==============> form submitted`);
+})
 
 // compte le nb de caract
 function countChar(input) {
@@ -14,11 +49,13 @@ function countChar(input) {
         input.classList.remove("danger");
         input.classList.add("success");
         input.parentElement.classList.add("success-checked");
+        console.info(`✅ ${input.id}: nb of character is valide`);
         return true;
     } else {
         input.classList.remove("success");
         input.parentElement.classList.remove("success-checked");
         input.classList.add("danger");
+        console.warn(`${input.id}: nb of character is false`);
         return false;
     }
 }
