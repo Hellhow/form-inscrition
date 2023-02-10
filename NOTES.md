@@ -225,4 +225,12 @@ https://www.youtube.com/watch?v=XviRIb9BMpI&t=8s
 <iframe width="560" height="315" src="https://www.youtube.com/embed/XviRIb9BMpI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
+## TODO
 
+    [] Ajouter des labels pour apporter une meilleure expérience utilisateur (ex: préciser q le champs "email" doit contenir un "@" et un ".")
+    [] Regex sur les mdps
+    [] Style != sur les checkbox
+    [] Créer un form de co et réutiliser et réutiliser les ftcs si nécessaire
+    [] Afficher les messages d'erreurs pour l'utilisateur
+
+    <!-- [] Créer du padding pour Matt -->
